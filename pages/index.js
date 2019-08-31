@@ -1,21 +1,12 @@
-import styled from 'styled-components';
+import { connect } from 'react-redux';
 import { injectGlobal } from 'styled-components';
+import GithubUsersContainer from './../src/components/GithubUsersContainer/GithubUsersContainer';
 
 injectGlobal`
-  body, p, h1 {
+  body, p, h1, h2 {
     margin: 0;
     font-family: sans-serif;
   }
 `;
 
-const Title = styled.h1`
-  color: dodgerblue;
-`;
-
-const Index = () => (
-  <div>
-    <Title>Hello World!</Title>
-  </div>
-);
-
-export default Index
+export default connect(state => state)(GithubUsersContainer);
